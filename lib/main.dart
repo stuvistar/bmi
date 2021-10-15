@@ -9,11 +9,11 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = ThemeData();
     return MaterialApp(
-      theme: theme.copyWith(
+      theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFF0A0E21),
         colorScheme: theme.colorScheme.copyWith(secondary: Colors.purple[300]),
         textTheme: const TextTheme(
-           bodyText2: TextStyle(color: Colors.white),
+          bodyText2: TextStyle(color: Colors.white),
         ),
         appBarTheme: const AppBarTheme(
           color: Color(0xFF0A0E21),
