@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'reusabe_card.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -18,61 +19,31 @@ class _InputPageState extends State<InputPage> {
         children: [
           Expanded(
             child: Row(
-            children: [
+            children: const [
               Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1D1E33),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+                child:  ReusableCard(),
               ),
               
               Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1D1E33),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+                child: ReusableCard(),
               ),
             ],
                   ),
           ),
           
-          Expanded(
-              child: Container(
-                margin: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1D1E33),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+         const Expanded(
+              child: ReusableCard(),
             ),
 
             Expanded(
               child: Row(
-                      children: [
+                      children: const [
               Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1D1E33),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+                child: ReusableCard(),
               ),
               
               Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1D1E33),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+                child: ReusableCard(),
               ),
                       ],
                     ),
@@ -85,3 +56,5 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
+
+
