@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'reusabe_card.dart';
+
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -19,42 +19,50 @@ class _InputPageState extends State<InputPage> {
         children: [
           Expanded(
             child: Row(
-            children: const [
-              Expanded(
-                child:  ReusableCard(),
-              ),
-              
-              Expanded(
-                child: ReusableCard(),
-              ),
-            ],
-                  ),
+              children:  const [
+                Expanded(
+                  child: ReusableCard(Color(0xFF0A0E21),),
+                ),
+                Expanded(
+                  child: ReusableCard(Color(0xFF0A0E21),),
+                ),
+              ],
+            ),
           ),
-          
-         const Expanded(
-              child: ReusableCard(),
+           const Expanded(
+            child: ReusableCard(Color(0xFF0A0E21),),
+          ),
+          Expanded(
+            child: Row(
+              children:  const [
+                Expanded(
+                  child: ReusableCard(Color(0xFF0A0E21),),
+                ),
+                Expanded(
+                  child: ReusableCard(Color(0xFF0A0E21),),
+                ),
+              ],
             ),
-
-            Expanded(
-              child: Row(
-                      children: const [
-              Expanded(
-                child: ReusableCard(),
-              ),
-              
-              Expanded(
-                child: ReusableCard(),
-              ),
-                      ],
-                    ),
-            ),
+          ),
         ],
-
-
-      
       ),
     );
   }
 }
 
 
+class ReusableCard extends StatelessWidget {
+  const ReusableCard(this.col, {Key? key}) : super(key: key);
+  final Color col;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        color: col,
+        borderRadius: BorderRadius.circular(10),
+      ),
+    );
+  }
+}
