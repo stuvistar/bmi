@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const bottContaHeight = 80.0;
 const reusableCardColor = Color(0xFF1D1E33);
@@ -69,7 +70,10 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  const ReusableCard(this.col);
+  // ignore: use_key_in_widget_constructors
+  const ReusableCard(this.col, [this.childCard]);
+
+  final Widget? childCard;
   final Color col;
 
   @override
