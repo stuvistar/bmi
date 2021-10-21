@@ -22,13 +22,32 @@ class _InputPageState extends State<InputPage> {
         children: [
           Expanded(
             child: Row(
-              children: const [
+              children: [
                 Expanded(
                   child: ReusableCard(
                     reusableCardColor,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          FontAwesomeIcons.mars,
+                          size: 80.0,
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        ),
+                        Text(
+                          'MALE',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            color: Color(0xFF8D8E98),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                Expanded(
+               const Expanded(
                   child: ReusableCard(
                     reusableCardColor,
                   ),
@@ -79,6 +98,7 @@ class ReusableCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: childCard,
       margin: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: col,
