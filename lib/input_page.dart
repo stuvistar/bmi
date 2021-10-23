@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const bottContaHeight = 80.0;
 const reusableCardColor = Color(0xFF1D1E33);
+const inactiveCardColor = Color(0xFF111328);
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -12,6 +13,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleCardColor = inactiveCardColor;
+  Color femaleCardColor = inactiveCardColor;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +28,13 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {
-                      print("sdd");
+                    onTap: (){
+                      setState(() {
+                        
+                      });
                     },
                     child: ReusableCard(
-                      reusableCardColor,
+                      maleCardColor,
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -52,9 +57,9 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-                const Expanded(
+                 Expanded(
                   child: ReusableCard(
-                    reusableCardColor,
+                    femaleCardColor,
                   ),
                 ),
               ],
