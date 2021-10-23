@@ -24,30 +24,35 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(
-                    reusableCardColor,
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80.0,
-                        ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Text(
-                          'MALE',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Color(0xFF8D8E98),
+                  child: GestureDetector(
+                    onTap: () {
+                      print("sdd");
+                    },
+                    child: ReusableCard(
+                      reusableCardColor,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            FontAwesomeIcons.mars,
+                            size: 80.0,
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            height: 15.0,
+                          ),
+                          Text(
+                            'MALE',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Color(0xFF8D8E98),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-               const Expanded(
+                const Expanded(
                   child: ReusableCard(
                     reusableCardColor,
                   ),
