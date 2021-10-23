@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'reusabe_card.dart';
+import 'icon_content.dart';
 
 const bottContaHeight = 80.0;
 const reusableCardColor = Color(0xFF1D1E33);
@@ -28,39 +30,16 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: (){
-                      setState(() {
-                        
-                      });
+                    onTap: () {
+                      setState(() {});
                     },
-                    child: ReusableCard(
-                      maleCardColor,
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Icon(
-                            FontAwesomeIcons.mars,
-                            size: 80.0,
-                          ),
-                          SizedBox(
-                            height: 15.0,
-                          ),
-                          Text(
-                            'MALE',
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              color: Color(0xFF8D8E98),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: ReusableCard(maleCardColor,
+                        const IconContent(FontAwesomeIcons.mars, "MALE")),
                   ),
                 ),
-                 Expanded(
-                  child: ReusableCard(
-                    femaleCardColor,
-                  ),
+                Expanded(
+                  child: ReusableCard(femaleCardColor,
+                      const IconContent(FontAwesomeIcons.venus, 'FEMALE')),
                 ),
               ],
             ),
@@ -93,26 +72,6 @@ class _InputPageState extends State<InputPage> {
             margin: const EdgeInsets.only(top: 10.0),
           )
         ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  // ignore: use_key_in_widget_constructors
-  const ReusableCard(this.col, [this.childCard]);
-
-  final Widget? childCard;
-  final Color col;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: childCard,
-      margin: const EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-        color: col,
-        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
