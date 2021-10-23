@@ -7,6 +7,12 @@ const bottContaHeight = 80.0;
 const reusableCardColor = Color(0xFF1D1E33);
 const inactiveCardColor = Color(0xFF111328);
 
+//enum for gender
+enum GenderEnum {
+  male,
+  female
+}
+
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
 
@@ -19,17 +25,20 @@ class _InputPageState extends State<InputPage> {
   Color femaleCardColor = inactiveCardColor;
 
   //funct to toggle card color on click
-  void cardPress(int gender) //  1 for male, 0 for female
+  void cardPress(GenderEnum gen) //  1 for male, 0 for female
   {
-    if (gender == 1) {
+    if (gen == GenderEnum.male) {
       if (maleCardColor == inactiveCardColor) {
         maleCardColor = reusableCardColor;
+        femaleCardColor = inactiveCardColor;
       } else {
         maleCardColor = inactiveCardColor;
       }
+      // female card press
     } else {
       if (femaleCardColor == inactiveCardColor) {
         femaleCardColor = reusableCardColor;
+        maleCardColor = inactiveCardColor;
       } else {
         femaleCardColor = inactiveCardColor;
       }
@@ -51,7 +60,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        cardPress(1);
+                        cardPress(GenderEnum.male);
                       });
                     },
                     child: ReusableCard(maleCardColor,
@@ -62,7 +71,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        cardPress(0);
+                        cardPress(GenderEnum.female);
                       });
                     },
                     child: ReusableCard(femaleCardColor,
