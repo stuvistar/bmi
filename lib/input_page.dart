@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusabe_card.dart';
 import 'icon_content.dart';
-
-const bottContaHeight = 80.0;
-const reusableCardColor = Color(0xFF1D1E33);
-const inactiveCardColor = Color(0xFF111328);
+import 'constants.dart';
 
 //enum for gender
 enum GenderEnum { male, female }
@@ -45,7 +42,7 @@ class _InputPageState extends State<InputPage> {
                     },
                     child: ReusableCard(
                       // checks if maleCard Tap, change color to acitve card color
-                      SelectedGender == GenderEnum.male? reusableCardColor:inactiveCardColor,
+                      SelectedGender == GenderEnum.male? KreusableCardColor:KinactiveCardColor,
                       const IconContent(FontAwesomeIcons.mars, "MALE"),
                     ),
                   ),
@@ -60,7 +57,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: ReusableCard(
-                      SelectedGender == GenderEnum.female? reusableCardColor:inactiveCardColor,
+                      SelectedGender == GenderEnum.female? KreusableCardColor:KinactiveCardColor,
                       const IconContent(FontAwesomeIcons.venus, 'FEMALE'),
                     ),
                   ),
@@ -70,7 +67,7 @@ class _InputPageState extends State<InputPage> {
           ),
           const Expanded(
             child: ReusableCard(
-              reusableCardColor,
+              KreusableCardColor,
             ),
           ),
           Expanded(
@@ -78,12 +75,12 @@ class _InputPageState extends State<InputPage> {
               children: const [
                 Expanded(
                   child: ReusableCard(
-                    reusableCardColor,
+                    KreusableCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    reusableCardColor,
+                    KreusableCardColor,
                   ),
                 ),
               ],
@@ -92,7 +89,7 @@ class _InputPageState extends State<InputPage> {
           Container(
             color: const Color(0xFFEB1555),
             width: double.infinity,
-            height: bottContaHeight,
+            height: KbottContaHeight,
             margin: const EdgeInsets.only(top: 10.0),
           )
         ],
